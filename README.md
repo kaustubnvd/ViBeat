@@ -5,7 +5,7 @@
 <h3 align="center">ViBeat</h3>
 
 <p align="center">
-    Intuitive, helpful, and optimized discord music bot that lets you apply your favorite music filters.
+    Intuitive, helpful, and optimized discord music bot with native YouTube search.
     <br>
     <a href="https://discord.js.org/#/docs/main/stable/general/welcome"><strong>Explore Discord.js docs »</strong></a>
 </p>
