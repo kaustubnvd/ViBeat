@@ -1,11 +1,11 @@
 module.exports = {
   name: 'np',
   description: 'Now Playing',
-  execute(message) {
-    const { songTitle } = require('./play');
-    if (!songTitle) {
+  execute(message, args, servers) {
+    const { nowPlaying } = servers[message.guild.id];
+    if (!nowPlaying) {
       return message.reply('There is no music playing');
     }
-    message.channel.send(`\u{1F3B6} **Playing** \`${songTitle}\``);
+    message.channel.send(`\u{1F3B6} **Playing** \`${nowPlaying}\``);
   }
 };

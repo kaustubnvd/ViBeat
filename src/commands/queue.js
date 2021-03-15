@@ -1,19 +1,13 @@
 module.exports = {
   name: 'queue',
   description: 'Displays the music queue',
-  execute(message) {
-    // Import music queue from play.js
-    const { queue } = require('./play');
+  execute(message, args, servers) {
+    const { queue } = servers[message.guild.id];
     if (!queue.length) {
       return message.reply('The music queue is empty');
     }
-    try {
-      const displayQueue = formatQueueData(queue);
-      message.channel.send(displayQueue);
-    } catch(err) {
-      console.error(err);
-      message.reply('There was trouble completing your request');
-    } 
+    const displayQueue = formatQueueData(queue);
+    message.channel.send(displayQueue);
   }
 };
 

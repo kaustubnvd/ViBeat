@@ -1,16 +1,11 @@
 module.exports = {
   name: 'pause',
   description: 'Pauses the music currently playing',
-  execute(message) {
-    const { dispatcher } = require('./play');
+  execute(message, args, servers) {
+    const { dispatcher }  = servers[message.guild.id];
     if (dispatcher) {
-      try {
-        dispatcher.pause();
-        message.channel.send('\u23F8 **Music has been paused**');
-      } catch (err) {
-        console.error(err);
-        message.reply('There was trouble completing your request');
-      }
+      dispatcher.pause();
+      message.channel.send('\u23F8 **Music has been paused**');
     }
   }
 };
